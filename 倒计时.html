@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>倒计时</title>
+    </head>
+    <body>
+        <button onclick="count()">倒计时开始</button>
+        <h1 id="fuck"></h1>
+        <script type="text/javascript">
+        var max=10;
+        function count(){
+        	var f=document.getElementById("fuck");
+            f.innerHTML=max;
+            if(max>0){
+				max--;
+                setTimeout(count,1000);
+            }else{
+				alert("发射成功！");
+			}
+            
+        }
+		
+        </script>
+     
+    </body>
+</html>

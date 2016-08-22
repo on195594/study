@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>浏览器对象</title>  
+  <meta http-equiv="Content-Type" content="text/html; charset=gkb"/>   
+ </head>
+ <body>
+  <!--先编写好网页布局-->
+  <h1>
+  	操作成功
+  </h1>
+  <p>
+  <span id="ss"></span>秒后跳转
+  <a id="aa" href="#" onclick="fanHui()">返回</a>
+  </p>
+  
+ 
+  <script type="text/javascript">  
+ 
+   //获取显示秒数的元素，通过定时器来更改秒数。
+    var num=5;
+    function jiShi(){
+		if(num==0){
+			//alert("正前往木可望！");
+			location.assign("http://www.google.com");	
+		}
+		var s=document.getElementById("ss");
+		s.innerHTML=num;
+		num--;
+		return setTimeout("jiShi()",1000);   	
+   }
+   jiShi();   
+   //通过window的location和history对象来控制网页的跳转。
+   function fanHui(){
+   	var a=document.getElementById("aa");
+   	a.setAttribute("href",window.history.go(-1));
+   }
+
+ </script> 
+</body>
+</html>
